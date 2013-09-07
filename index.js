@@ -1,17 +1,12 @@
-var http = require("http");
-//var twitterAPI = require("node-twitterAPI");
+var express = require("express");
+var app = express();
+app.use(express.logger());
 
-var server = http.createServer(function (request, response) {
-    response.writeHead(200, {"Content-type": "text-plain"});
-    response.end("Hello world!");
+app.get('/', function(request, response) {
+      response.send('Hello World!');
 });
 
-/*var twitter = new twitterAPI({
-    consumerKey: "A key",
-    consumerSecret: "A secret",
-    callback: "URL?"
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+      console.log("Listening on " + port);
 });
-*/
-
-
-//server.listen(9000);
