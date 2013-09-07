@@ -1,0 +1,18 @@
+{
+  "name": "resizeasaurus-server",
+  "version": "0.0.0",
+  "description": "Resizeasaurus is wrecking your server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greysonp/resizeasaurus-server.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greysonp/resizeasaurus-server/issues"
+  }
+}
