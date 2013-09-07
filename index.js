@@ -1,4 +1,5 @@
 var express = require("express");
+var twitterAPI = require("node-twitter-api");
 
 var app = express();
 /*var twitter = new twitterAPI({
