@@ -31,10 +31,22 @@ app.get("/:hash/:url/:message/:gif_type", function(req, response) {
         }
         else {
             var json_thing = JSON.parse(body);
-            var random_factor = Math.floor(Math.random() * 99);
-            //console.log("JSON %j", json_thing);
-            var gif = json_thing.data[random_factor].images.original.url;
-            console.log(gif);
+
+            var random_factor = Math.floor(Math.random() * json_thing.data.length - 1);
+            var gif =""
+
+            if(typeof json_thing != 'undefined' || json_thing.data != null || json_thing.data.length != 0) {
+                gif = json_thing.data[random_factor].images.original.url;
+            }
+            else if (req.params["hash"].toLowerCase() === "wreck") {
+                gif = "http://media0.giphy.com/media/kzqqeazk910C4/original.gif";
+            }
+            else if (req.params["hash"].toLowerCase() === "respect") {
+                gif = "http://media0.giphy.com/media/XMvrleT9jksXm/original.gif";
+            }
+            else {
+                gif = "http://media1.giphy.com/media/4gi5nU2Yz5jvG/giphy.gif";
+            }
             twit.verifyCredentials(function (err, data) {
                 console.log(data);
             })
