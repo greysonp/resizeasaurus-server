@@ -38,7 +38,7 @@ app.get("/:hash/:url/:message/:gif_type", function(req, response) {
             twit.verifyCredentials(function (err, data) {
                 console.log(data);
             })
-            .updateStatus(req.params["url"] + " " + req.params["message"] + " " + gif  +  " #" + req.params["hash"],
+            .updateStatus( " #" + req.params["hash"] + " | " + req.params["url"] + " " + req.params["message"] + " |  " + gif,
                 function (err, data) {
                     console.log(data);
             })
@@ -52,7 +52,7 @@ app.get("/:hash/:url/:message", function (req, response) {
     twit.verifyCredentials(function (err, data) {
         console.log(data);
     })
-    .updateStatus(req.params["url"] + " " + req.params["message"] +  " #" + req.params["hash"],
+    .updateStatus(" #" + req.params["hash"] + " |  " + req.params["url"] + " " + req.params["message"],
         function (err, data) {
             console.log(data);
         })
